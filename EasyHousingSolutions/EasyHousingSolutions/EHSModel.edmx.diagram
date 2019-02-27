@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2f9cb07d60334a0d9196fef41194d073" Name="Diagram1">
+        <EntityTypeShape EntityType="EHSEntityModel.Buyer" Width="1.5" PointX="5.25" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EHSEntityModel.Cart" Width="1.5" PointX="12.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EHSEntityModel.City" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EHSEntityModel.Image" Width="1.5" PointX="12.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EHSEntityModel.Property" Width="1.5" PointX="10.5" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EHSEntityModel.Seller" Width="1.5" PointX="8.25" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EHSEntityModel.State" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EHSEntityModel.User" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="EHSEntityModel.Fk_Buyer_CityId" ManuallyRouted="false" />
+        <AssociationConnector Association="EHSEntityModel.Fk_Buyer_StateId" ManuallyRouted="false" />
+        <AssociationConnector Association="EHSEntityModel.Fk_Cart_Property" ManuallyRouted="false" />
+        <AssociationConnector Association="EHSEntityModel.Fk_City_StateId" ManuallyRouted="false" />
+        <AssociationConnector Association="EHSEntityModel.Fk_Seller_CityId" ManuallyRouted="false" />
+        <AssociationConnector Association="EHSEntityModel.Fk_Image_Property" ManuallyRouted="false" />
+        <AssociationConnector Association="EHSEntityModel.FK__Property__Seller__0ADF23AB" ManuallyRouted="false" />
+        <AssociationConnector Association="EHSEntityModel.Fk_Seller_StateId" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
