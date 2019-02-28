@@ -45,15 +45,15 @@ namespace EasyHousingSolutions.Controllers
                 Session["userType"] = user.UserType;
                 if (user.UserType.Equals("Admin"))
                 {
-                    return RedirectToAction("Home", "Home");
+                    return RedirectToAction("Index", "Home");
                 }
                 if (user.UserType.Equals("Seller"))
                 {
-                    return RedirectToAction("Home", "Home");
+                    return RedirectToAction("Index", "Home");
                 }
                 if (user.UserType.Equals("Buyer"))
                 {
-                    return RedirectToAction("Home", "Home");
+                    return RedirectToAction("Index", "Home");
                 }
             }
             else

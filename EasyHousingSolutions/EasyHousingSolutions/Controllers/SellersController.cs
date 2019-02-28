@@ -17,6 +17,7 @@ namespace EasyHousingSolutions.Controllers
         // GET: Sellers
         public ActionResult Index()
         {
+          
             var sellers = db.Sellers.Include(s => s.City).Include(s => s.State);
             return View(sellers.ToList());
         }
@@ -49,8 +50,13 @@ namespace EasyHousingSolutions.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "SellerId,UserName,FirstName,LastName,DateOfBirth,PhoneNumber,Adress,StateId,CityId,EmailId")] Seller seller)
+        public ActionResult Create([Bind(Include = "SellerId,UserName,FirstName,LastName,password,DateOfBirth,PhoneNumber,Adress,StateId,CityId,EmailId")] Seller seller)
         {
+            User newUser = new User();
+            newUser.UserName =seller.UserName;
+            newUser.Pasword = seller.password.ToString();
+            newUser.UserType = "Seller";
+            db.Users.Add(newUser);
             if (ModelState.IsValid)
             {
                 db.Sellers.Add(seller);
@@ -85,7 +91,7 @@ namespace EasyHousingSolutions.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "SellerId,UserName,FirstName,LastName,DateOfBirth,PhoneNumber,Adress,StateId,CityId,EmailId")] Seller seller)
+        public ActionResult Edit([Bind(Include = "SellerId,UserName,FirstName,LastName,password,DateOfBirth,PhoneNumber,Adress,StateId,CityId,EmailId")] Seller seller)
         {
             if (ModelState.IsValid)
             {
