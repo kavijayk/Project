@@ -1,8 +1,31 @@
 ﻿@model EasyHousingSolutions.User
 
 @{
+    /**/
+
     ViewBag.Title = "LoginUser";
 }
+<style>
+    .blockRegister {
+        margin: 20px;
+    }
+
+    .usvalid {
+        margin-left: 470px;
+    }
+
+    .affix {
+        top: 0;
+        width: 100%;
+        z-index: 9999 !important;
+    }
+
+        .affix ~ .container-fluid {
+            position: relative;
+            top: 50px;
+        }
+</style>
+
 
 <h2>LoginUser</h2>
 
@@ -16,17 +39,17 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2", @placeholder = "User Name" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control", @Placeholder = "UserName", @type = "Text" } })
+                @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Pasword, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Pasword, htmlAttributes: new { @class = "control-label col-md-2", @placeholder = "Password" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Pasword, new { htmlAttributes = new { @class = "form-control", @placeholder = "Password", @type = "Password" } })
+                @Html.EditorFor(model => model.Pasword, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Pasword, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -40,16 +63,16 @@
                 new SelectListItem{ Text="Admin", Value = "Admin" },
                 new SelectListItem{ Text="Seller", Value = "Seller" },
                 new SelectListItem{ Text="Buyer", Value = "Buyer" },
-    }, new { @class = "form-control" });
+    },new { @class= "form-control" })
                 @Html.ValidationMessageFor(model => model.UserType, "", new { @class = "text-danger usvalid" })
             </div>
         </div>
+
         <div class="form-group">
             <div class="col-md-10">
                 <input type="submit" value="Login" class="btn btn-primary col-md-1" style="margin-left:200px" />
             </div>
         </div>
-
         @if (@TempData["Message"] != null)
         {
             <label style=" color:red">
@@ -59,25 +82,32 @@
         }
     </div>
 }
+@using (Html.BeginForm("RedirectToRegister", "Login", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
 
-    @using (Html.BeginForm("RedirectToRegister", "Login", FormMethod.Post))
-    {
-        @Html.AntiForgeryToken()
-
-        <div class="form-group">
-            <div class="col-md-10 blockRegister">
-                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo" style="margin-left:190px;background-color:#428bca;    margin-top: -126px;
+    <div class="form-group">
+        <div class="col-md-10 blockRegister">
+            <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo" style="margin-left:190px;background-color:#428bca;    margin-top: -146px;
     margin-left: 272px;">
-                    Register here
-                </button>
-                }
-                </div>
-            </div>
+                Register here
+            </button>
+            @*<div id="demo" class="collapse" style="    margin-left: 482px;    margin-top: -234px;">
+                <p class="text-primary" style="font-weight:bold;">Select user type to <mark>Sign up</mark>:</p>
+                <br />
+                @Html.RadioButtonFor(model => model.UserType, "UserSeller")  Seller
+                @Html.RadioButtonFor(model => model.UserType, "UserBuyer")  Buyer<br />
+                @Html.ValidationMessageFor(model => model.UserType, "", new { @class = "text-danger" })
+                <br /><input type="submit" value="Go" class="btn btn-default" />
+            </div>*@
+        </div>
+    </div>
+}
 
-                <div>
-                    @Html.ActionLink("Back to List", "Index")
-                </div>
-    }
-                @section Scripts {
-                    @Scripts.Render("~/bundles/jqueryval")
-                }
+@*<div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>*@
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
