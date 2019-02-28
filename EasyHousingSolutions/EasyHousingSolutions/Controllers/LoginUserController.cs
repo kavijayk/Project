@@ -69,7 +69,7 @@ namespace EasyHousingSolutions.Controllers
         {
             Session["userType"] = null;
             Session["userName"] = null;
-            return RedirectToAction("Home", "Home");
+            return RedirectToAction("Home", "Home"); ;
         }
     }
 }
