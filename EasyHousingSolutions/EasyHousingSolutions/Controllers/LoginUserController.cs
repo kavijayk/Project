@@ -8,6 +8,7 @@ namespace EasyHousingSolutions.Controllers
 {
     public class LoginUserController : Controller
     {
+        
         // GET: LoginUser
         public ActionResult Index()
         {
