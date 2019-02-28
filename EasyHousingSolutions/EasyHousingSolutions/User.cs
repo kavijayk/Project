@@ -7,17 +7,15 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EasyHousingSolutions.Controllers
+namespace EasyHousingSolutions
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Image
+    public partial class User
     {
-        public int ImageId { get; set; }
-        public int PropertyId { get; set; }
-        public string Image1 { get; set; }
-    
-        public virtual Property Property { get; set; }
+        public string UserName { get; set; }
+        public string Pasword { get; set; }
+        public string UserType { get; set; }
     }
 }

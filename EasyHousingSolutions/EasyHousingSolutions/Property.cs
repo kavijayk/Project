@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EasyHousingSolutions.Controllers
+namespace EasyHousingSolutions
 {
     using System;
     using System.Collections.Generic;

@@ -7,25 +7,33 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EasyHousingSolutions.Controllers
+namespace EasyHousingSolutions
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Buyer
+    public partial class Seller
     {
-        public int BuyerId { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Seller()
+        {
+            this.Properties = new HashSet<Property>();
+        }
+    
+        public int SellerId { get; set; }
         public string UserName { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public System.DateTime DateOfBirth { get; set; }
         public string PhoneNumber { get; set; }
-        public string EmailId { get; set; }
         public string Adress { get; set; }
         public int StateId { get; set; }
         public int CityId { get; set; }
+        public string EmailId { get; set; }
     
         public virtual City City { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Property> Properties { get; set; }
         public virtual State State { get; set; }
     }
 }

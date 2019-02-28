@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EasyHousingSolutions.Controllers
+namespace EasyHousingSolutions
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Training_12Dec18_BangaloreEntities : DbContext
+    public partial class Training_12Dec18_BangaloreEntities1 : DbContext
     {
-        public Training_12Dec18_BangaloreEntities()
-            : base("name=Training_12Dec18_BangaloreEntities")
+        public Training_12Dec18_BangaloreEntities1()
+            : base("name=Training_12Dec18_BangaloreEntities1")
         {
         }
     

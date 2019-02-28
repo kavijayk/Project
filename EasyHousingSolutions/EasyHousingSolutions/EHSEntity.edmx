@@ -428,7 +428,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Training_12Dec18_BangaloreEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Training_12Dec18_BangaloreEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Buyers" EntityType="Self.Buyer" />
           <EntitySet Name="Carts" EntityType="Self.Cart" />
           <EntitySet Name="Cities" EntityType="Self.City" />
@@ -475,7 +475,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Training_12Dec18_BangaloreModelStoreContainer" CdmEntityContainer="Training_12Dec18_BangaloreEntities">
+        <EntityContainerMapping StorageEntityContainer="Training_12Dec18_BangaloreModelStoreContainer" CdmEntityContainer="Training_12Dec18_BangaloreEntities1">
           <EntitySetMapping Name="Buyers">
             <EntityTypeMapping TypeName="Training_12Dec18_BangaloreModel.Buyer">
               <MappingFragment StoreEntitySet="Buyer">

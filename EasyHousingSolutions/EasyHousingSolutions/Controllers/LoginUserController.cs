@@ -8,83 +8,68 @@ namespace EasyHousingSolutions.Controllers
 {
     public class LoginUserController : Controller
     {
-        
+        Training_12Dec18_BangaloreEntities1 ehs = new Training_12Dec18_BangaloreEntities1();
         // GET: LoginUser
         public ActionResult Index()
         {
             return View();
         }
-
-        // GET: LoginUser/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        // GET: LoginUser/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: LoginUser/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult RedirectToRegister(User user)
         {
-            try
+            if (user.UserType.Equals("UserSeller"))
             {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
+                return RedirectToAction("RegisterSeller", "Register");
             }
-            catch
+            else if (user.UserType.Equals("UserBuyer"))
             {
-                return View();
+                return RedirectToAction("RegisterBuyer", "Register");
             }
+            return View();
         }
 
-        // GET: LoginUser/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult LoginUser()
         {
             return View();
         }
 
-        // POST: LoginUser/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult LoginUser(User user)
         {
-            try
+            List<User> userlist = ehs.Users.ToList();
+            List<User> loginUser = userlist.Where(u => u.UserName == user.UserName
+            && u.Pasword == user.Pasword && u.UserType == user.UserType).ToList();
+            if (loginUser.Count == 1)
             {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
+                Session["userName"] = user.UserName;
+                Session["userType"] = user.UserType;
+                if (user.UserType.Equals("Admin"))
+                {
+                    return RedirectToAction("Home", "Home");
+                }
+                if (user.UserType.Equals("Seller"))
+                {
+                    return RedirectToAction("Home", "Home");
+                }
+                if (user.UserType.Equals("Buyer"))
+                {
+                    return RedirectToAction("Home", "Home");
+                }
             }
-            catch
+            else
             {
+                TempData["Message"] = "Invalid Credentials";
+                ModelState.Clear();
                 return View();
-            }
-        }
 
-        // GET: LoginUser/Delete/5
-        public ActionResult Delete(int id)
-        {
+            }
             return View();
         }
-
-        // POST: LoginUser/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult LogoutUser()
         {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            Session["userType"] = null;
+            Session["userName"] = null;
+            return RedirectToAction("Home", "Home");
         }
     }
 }

@@ -134,63 +134,63 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\Buyer.cs">
+    <Compile Include="Buyer.cs">
       <DependentUpon>EHSEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\Cart.cs">
+    <Compile Include="Cart.cs">
       <DependentUpon>EHSEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\City.cs">
+    <Compile Include="City.cs">
       <DependentUpon>EHSEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\EHSEntity.Context.cs">
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginUserController.cs" />
+    <Compile Include="EHSEntity.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EHSEntity.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\EHSEntity.cs">
+    <Compile Include="EHSEntity.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EHSEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\EHSEntity.Designer.cs">
+    <Compile Include="EHSEntity.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EHSEntity.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\Image.cs">
-      <DependentUpon>EHSEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Controllers\LoginUserController.cs" />
-    <Compile Include="Controllers\Property.cs">
-      <DependentUpon>EHSEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Controllers\Seller.cs">
-      <DependentUpon>EHSEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Controllers\State.cs">
-      <DependentUpon>EHSEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Controllers\User.cs">
-      <DependentUpon>EHSEntity.tt</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Image.cs">
+      <DependentUpon>EHSEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Property.cs">
+      <DependentUpon>EHSEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Seller.cs">
+      <DependentUpon>EHSEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="State.cs">
+      <DependentUpon>EHSEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>EHSEntity.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Controllers\EHSEntity.Context.tt">
+    <Content Include="EHSEntity.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>EHSEntity.Context.cs</LastGenOutput>
       <DependentUpon>EHSEntity.edmx</DependentUpon>
+      <LastGenOutput>EHSEntity.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Controllers\EHSEntity.tt">
+    <Content Include="EHSEntity.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>EHSEntity.edmx</DependentUpon>
       <LastGenOutput>EHSEntity.cs</LastGenOutput>
@@ -201,11 +201,11 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Controllers\EHSEntity.edmx">
+    <EntityDeploy Include="EHSEntity.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>EHSEntity.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Controllers\EHSEntity.edmx.diagram">
+    <Content Include="EHSEntity.edmx.diagram">
       <DependentUpon>EHSEntity.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
@@ -233,11 +233,11 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\LoginUser\LoginUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\LoginUser\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
