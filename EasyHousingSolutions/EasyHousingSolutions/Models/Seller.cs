@@ -7,28 +7,33 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EasyHousingSolutions
+namespace EasyHousingSolutions.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class City
+    public partial class Seller
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public City()
+        public Seller()
         {
-            this.Buyers = new HashSet<Buyer>();
-            this.Sellers = new HashSet<Seller>();
+            this.Properties = new HashSet<Property>();
         }
     
-        public int CityId { get; set; }
-        public string CityName { get; set; }
+        public int SellerId { get; set; }
+        public string UserName { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public System.DateTime DateOfBirth { get; set; }
+        public string PhoneNumber { get; set; }
+        public string Adress { get; set; }
         public int StateId { get; set; }
+        public int CityId { get; set; }
+        public string EmailId { get; set; }
     
+        public virtual City City { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Buyer> Buyers { get; set; }
+        public virtual ICollection<Property> Properties { get; set; }
         public virtual State State { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Seller> Sellers { get; set; }
     }
 }

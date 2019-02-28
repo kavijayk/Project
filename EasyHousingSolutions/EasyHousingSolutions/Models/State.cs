@@ -7,35 +7,29 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EasyHousingSolutions
+namespace EasyHousingSolutions.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Property
+    public partial class State
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Property()
+        public State()
         {
-            this.Carts = new HashSet<Cart>();
-            this.Images = new HashSet<Image>();
+            this.Buyers = new HashSet<Buyer>();
+            this.Cities = new HashSet<City>();
+            this.Sellers = new HashSet<Seller>();
         }
     
-        public int PropertyId { get; set; }
-        public string PropertyName { get; set; }
-        public string PropertyType { get; set; }
-        public string Descript { get; set; }
-        public string Adress { get; set; }
-        public decimal PriceRange { get; set; }
-        public decimal InitialDeposit { get; set; }
-        public string LandMark { get; set; }
-        public bool IsActive { get; set; }
-        public int SellerId { get; set; }
+        public int StateId { get; set; }
+        public string StateName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Cart> Carts { get; set; }
+        public virtual ICollection<Buyer> Buyers { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Image> Images { get; set; }
-        public virtual Seller Seller { get; set; }
+        public virtual ICollection<City> Cities { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Seller> Sellers { get; set; }
     }
 }

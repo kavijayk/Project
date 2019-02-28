@@ -7,17 +7,15 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EasyHousingSolutions
+namespace EasyHousingSolutions.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Cart
+    public partial class User
     {
-        public int CartId { get; set; }
-        public int BuyerId { get; set; }
-        public int PropertyId { get; set; }
-    
-        public virtual Property Property { get; set; }
+        public string UserName { get; set; }
+        public string Pasword { get; set; }
+        public string UserType { get; set; }
     }
 }
