@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EasyHousingSolutions
+namespace EasyHousingSolutions.Models
 {
     using System;
     using System.Data.Entity;

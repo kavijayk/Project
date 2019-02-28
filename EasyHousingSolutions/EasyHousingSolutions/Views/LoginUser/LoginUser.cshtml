@@ -1,65 +1,65 @@
-﻿@model EasyHousingSolutions.User
+﻿@model EasyHousingSolutions.Models.User
 
 @{
     ViewBag.Title = "LoginUser";
 }
 
-<h2>LoginUser</h2>
+<h2 style="text-align:center">LoginUser</h2>
 
 
-@using (Html.BeginForm("LoginUser", "LoginUser", FormMethod.Post)) 
+@using (Html.BeginForm("LoginUser", "LoginUser", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
-    
-<div class="form-horizontal">
+
+<div class="form-horizontal" style="text-align:center">
     <h4>User</h4>
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    <div class="form-group">
+    <div class="form-group" style="text-align:center">
         @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
+        <div class="col-md-10" style="text-align:center">
             @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control", @Placeholder = "UserName", @type = "Text" } })
             @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
         </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" style="text-align:center">
         @Html.LabelFor(model => model.Pasword, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
+        <div class="col-md-10" style="text-align:center">
             @Html.EditorFor(model => model.Pasword, new { htmlAttributes = new { @class = "form-control", @placeholder = "Password", @type = "Password" } })
             @Html.ValidationMessageFor(model => model.Pasword, "", new { @class = "text-danger" })
         </div>
     </div>
 
-    <div class="form-group">
-        <div class="col-md-10">
-            @Html.Label("User type", htmlAttributes: new { @class = "control-label col-md-2", })
+    <div class="form-group" style="text-align:center">
+        @Html.Label("User type", htmlAttributes: new { @class = "control-label col-md-2", })
+        <div class="col-md-10" style="text-align:center">
             @Html.DropDownListFor(model => model.UserType, new List<SelectListItem>
 {
             new SelectListItem{ Text="", Value = "" },
             new SelectListItem{ Text="Admin", Value = "Admin" },
             new SelectListItem{ Text="Seller", Value = "Seller" },
             new SelectListItem{ Text="Buyer", Value = "Buyer" },
-}, new { @class = "form-control" });
+            }, new { @class = "form-control" });
             @Html.ValidationMessageFor(model => model.UserType, "", new { @class = "text-danger usvalid" })
         </div>
     </div>
-    <div class="form-group">
-        <div class="col-md-10">
+    <div class="form-group" style="text-align:center">
+        <div class="col-md-10" style="text-align:center">
             <input type="submit" value="Login" class="btn btn-primary col-md-1" style="margin-left:200px" />
         </div>
     </div>
 
     @if (@TempData["Message"] != null)
     {
-        <label style=" color:red">
+        <label style=" color:red;text-align:center">
             @TempData["Message"]
         </label>
-        <label>New user? Please Register</label>
+        <label style="text-align:center">New user? Please Register</label>
     }
 </div>
-        
-    
+
+
 }
 
 <div>

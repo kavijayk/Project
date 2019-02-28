@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EasyHousingSolutions
+namespace EasyHousingSolutions.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Image
+    public partial class Cart
     {
-        public int ImageId { get; set; }
+        public int CartId { get; set; }
+        public int BuyerId { get; set; }
         public int PropertyId { get; set; }
-        public string Image1 { get; set; }
     
         public virtual Property Property { get; set; }
     }
