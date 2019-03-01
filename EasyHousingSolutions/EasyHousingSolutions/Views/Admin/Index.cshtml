@@ -1,0 +1,81 @@
+﻿@model IEnumerable<EasyHousingSolutions.Property>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PropertyName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PropertyType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descript)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Adress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PriceRange)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InitialDeposit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LandMark)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Seller.UserName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PropertyName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PropertyType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descript)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Adress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PriceRange)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InitialDeposit)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LandMark)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsActive)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Seller.UserName)
+        </td>
+        <td>
+            @Html.ActionLink("Verify", "VerifyProperty", new { id=item.PropertyId }) |
+            @Html.ActionLink("Deactivate", "DeActivateProperty", new { id=item.PropertyId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PropertyId })
+        </td>
+    </tr>
+}
+
+</table>

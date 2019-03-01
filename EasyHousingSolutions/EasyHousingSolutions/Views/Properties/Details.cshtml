@@ -1,0 +1,90 @@
+﻿@model EasyHousingSolutions.Property
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Property</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PropertyName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PropertyName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PropertyType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PropertyType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descript)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descript)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PriceRange)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PriceRange)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InitialDeposit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InitialDeposit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LandMark)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LandMark)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsActive)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Seller.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Seller.UserName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PropertyId }) |
+    @Html.ActionLink("Back to List", "Create")
+</p>

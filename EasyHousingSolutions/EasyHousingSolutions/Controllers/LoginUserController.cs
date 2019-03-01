@@ -20,11 +20,11 @@ namespace EasyHousingSolutions.Controllers
         {
             if (user.UserType.Equals("UserSeller"))
             {
-                return RedirectToAction("RegisterSeller", "Register");
+                return RedirectToAction("RegisterSeller", "Registration");
             }
             else if (user.UserType.Equals("UserBuyer"))
             {
-                return RedirectToAction("RegisterBuyer", "Register");
+                return RedirectToAction("RegisterBuyer", "Registration");
             }
             return View();
         }
@@ -46,15 +46,15 @@ namespace EasyHousingSolutions.Controllers
                 Session["userType"] = user.UserType;
                 if (user.UserType.Equals("Admin"))
                 {
-                    return RedirectToAction("Home", "Home");
+                    return RedirectToAction("Index", "Home");
                 }
                 if (user.UserType.Equals("Seller"))
                 {
-                    return RedirectToAction("Home", "Home");
+                    return RedirectToAction("Index", "Home");
                 }
                 if (user.UserType.Equals("Buyer"))
                 {
-                    return RedirectToAction("Home", "Home");
+                    return RedirectToAction("Index", "Home");
                 }
             }
             else

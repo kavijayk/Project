@@ -143,9 +143,12 @@
     <Compile Include="City.cs">
       <DependentUpon>EHSEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\BuyersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginUserController.cs" />
-    <Compile Include="Controllers\SellersController.cs" />
+    <Compile Include="Controllers\PropertiesController.cs" />
+    <Compile Include="Controllers\RegistrationController.cs" />
     <Compile Include="EHSEntity.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -230,21 +233,30 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Register\RegisterSeller.cshtml" />
     <Content Include="Views\LoginUser\LoginUser.cshtml" />
-    <Content Include="Views\Sellers\Create.cshtml" />
-    <Content Include="Views\Sellers\Delete.cshtml" />
-    <Content Include="Views\Sellers\Details.cshtml" />
-    <Content Include="Views\Sellers\Edit.cshtml" />
-    <Content Include="Views\Sellers\Index.cshtml" />
+    <Content Include="Views\Properties\Edit.cshtml" />
+    <Content Include="Views\Properties\Details.cshtml" />
+    <Content Include="Views\Properties\Add.cshtml" />
+    <Content Include="Views\Properties\Create.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\DeActivateProperty.cshtml" />
+    <Content Include="Views\Admin\VerifyProperty.cshtml" />
+    <Content Include="Views\Admin\Delete.cshtml" />
+    <Content Include="Views\Buyers\ViewProperties.cshtml" />
+    <Content Include="Views\Buyers\DisplayCart.cshtml" />
+    <Content Include="Views\Buyers\Index.cshtml" />
+    <Content Include="Views\Buyers\Create.cshtml" />
+    <Content Include="Views\Registration\RegisterSeller.cshtml" />
+    <Content Include="Views\Registration\RegisterBuyer.cshtml" />
+    <Content Include="Views\Home\Home.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Buyer\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
