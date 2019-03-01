@@ -26,5 +26,14 @@ namespace EasyHousingSolutions.Controllers
 
             return View();
         }
+        public ActionResult Home()
+        {
+            if (Session["userType"] != null)
+            {
+                //    Session["userType"] = Session["userType"].ToString();
+                //    Session["userName"] = Session["userName"].ToString();
+            }
+            return View();
+        }
     }
 }

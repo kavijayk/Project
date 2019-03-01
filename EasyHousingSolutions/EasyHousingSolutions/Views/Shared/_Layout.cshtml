@@ -1,42 +1,134 @@
-﻿<!DOCTYPE html>
+﻿@*<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <style>
+
+        /*.afoot{
+            background-color:chocolate;
+
+        }
+        .afoot p:hover{
+            background-color:black;
+            color:hotpink;
+            text-decoration:solid;
+        }
+        .a{
+            background-color: gray;
+        }*/
+        body {
+            background-image: url('../../back.jpg');
+            margin-top: 122px;
+        }
+
+        .form-horizontal {
+            background-color: transparent;
+            margin-top: 158px;
+        }
+    </style>
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+    <section>
+        <div class="navbar-fixed-top " style="margin-top:-20px;background-color: #eff1e4;">
+            <div class="container-fluid a">
+                <div class="container-fluid easy">
+                    <h1 style="text-align:center;color:black;">Easy Housing Solution</h1>
+                    <h3 style="color:black; text-align:center">India's Top Property Portal</h3>
+                </div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-            </div>
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav">
+                            <li class="active"> @Html.ActionLink("Home", "Home", "Home")</li>
+
+                            @if (Session["userType"] != null)
+                            {
+
+                                if (Session["userType"].ToString() == "Seller")
+                                {
+                                    <li>  @Html.ActionLink("Add Property", "Add", "Properties")</li>
+                                    @*<li>@Html.ActionLink("Edit Property", "Create", "Property")</li>*@
+                                }
+                                if (Session["userType"].ToString() == "Seller" || Session["userType"].ToString() == "Buyer")
+                                {
+                                    <li>@Html.ActionLink("View Property", "Create", "Properties")</li>
+                                }
+                                if (Session["userType"].ToString() == "Admin")
+                                {
+                                    <li>@Html.ActionLink("Verify or Deactivate Property", "Index", "Admin")</li>
+                                }
+                                if (Session["userType"].ToString() == "Buyer")
+                                {
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><img src='@Url.Content("~/Content/shopping-cart.png")' width="25" height="22" /><span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li>@Html.ActionLink("Add", "ViewProperties", "Buyer")</li>
+                                            <li>@Html.ActionLink("View", "DisplayCart", "Buyer")</li>
+                                        </ul>
+                                    </li>
+                                }
+
+
+                            }
+                        </ul>
+
+                        @if (Session["userType"] == null)
+                        {
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href='@Url.Action("LoginUser","LoginUser")'><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                            </ul>
+                        }
+                        else
+                        {
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href='@Url.Action("LogoutUser","LoginUser")'> <span class="glyphicon glyphicon-log-out"></span> Log out</li>
+                            </ul>
+                        }
+                    </div>
+                </div>
+            </nav>
         </div>
-    </div>
-    <div class="container body-content">
+    </section>
+
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav"></ul>
+                </div>
+            </div>
+        </div>*@
+
+    <div class="container-fluid body-content abody">
         @RenderBody()
-        <hr />
-        <footer>
+
+
+        <footer class="afoot navbar-fixed-bottom">
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
 </body>
-</html>
+</html>*@

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<EasyHousingSolutions.Seller>
+﻿@model IEnumerable<EasyHousingSolutions.Buyer>
 
 @{
     ViewBag.Title = "Index";
@@ -21,19 +21,16 @@
             @Html.DisplayNameFor(model => model.LastName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.password)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.DateOfBirth)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.PhoneNumber)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Adress)
+            @Html.DisplayNameFor(model => model.EmailId)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.EmailId)
+            @Html.DisplayNameFor(model => model.Adress)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.City.CityName)
@@ -56,19 +53,16 @@
             @Html.DisplayFor(modelItem => item.LastName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.password)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.DateOfBirth)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.PhoneNumber)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Adress)
+            @Html.DisplayFor(modelItem => item.EmailId)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.EmailId)
+            @Html.DisplayFor(modelItem => item.Adress)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.City.CityName)
@@ -77,9 +71,9 @@
             @Html.DisplayFor(modelItem => item.State.StateName)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.SellerId }) |
-            @Html.ActionLink("Details", "Details", new { id = item.SellerId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.SellerId })
+            @Html.ActionLink("Edit", "Edit", new { id=item.BuyerId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.BuyerId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BuyerId })
         </td>
     </tr>
 }

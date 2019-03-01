@@ -19,11 +19,11 @@ namespace EasyHousingSolutions.Controllers
         {
             if (user.UserType.Equals("UserSeller"))
             {
-                return RedirectToAction("RegisterSeller", "Register");
+                return RedirectToAction("RegisterSeller", "Registration");
             }
             else if (user.UserType.Equals("UserBuyer"))
             {
-                return RedirectToAction("RegisterBuyer", "Register");
+                return RedirectToAction("RegisterBuyer", "Registration");
             }
             return View();
         }

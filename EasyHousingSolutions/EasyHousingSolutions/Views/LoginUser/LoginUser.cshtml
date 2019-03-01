@@ -70,7 +70,7 @@
 
         <div class="form-group">
             <div class="col-md-10">
-                <input type="submit" value="Login" class="btn btn-primary col-md-1" style="margin-left:200px" />
+                <input type="submit" value="Login" class="btn btn-default col-md-1" style="margin-left:200px" />
             </div>
         </div>
         @if (@TempData["Message"] != null)
@@ -82,32 +82,33 @@
         }
     </div>
 }
-@using (Html.BeginForm("RedirectToRegister", "Login", FormMethod.Post))
+@using (Html.BeginForm("RedirectToRegister", "LoginUser", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
 
     <div class="form-group">
         <div class="col-md-10 blockRegister">
             <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo" style="margin-left:190px;background-color:#428bca;    margin-top: -146px;
-    margin-left: 272px;">
-                Register here
-            </button>
-            @*<div id="demo" class="collapse" style="    margin-left: 482px;    margin-top: -234px;">
+    margin-left: 272px;">Register here </button>
+            <div id="demo" class="collapse" style="    margin-left: 482px;    margin-top: -234px;">
                 <p class="text-primary" style="font-weight:bold;">Select user type to <mark>Sign up</mark>:</p>
                 <br />
                 @Html.RadioButtonFor(model => model.UserType, "UserSeller")  Seller
                 @Html.RadioButtonFor(model => model.UserType, "UserBuyer")  Buyer<br />
                 @Html.ValidationMessageFor(model => model.UserType, "", new { @class = "text-danger" })
                 <br /><input type="submit" value="Go" class="btn btn-default" />
-            </div>*@
+            </div>
         </div>
     </div>
 }
+
 
 @*<div>
         @Html.ActionLink("Back to List", "Index")
     </div>*@
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+

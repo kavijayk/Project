@@ -19,6 +19,7 @@ namespace EasyHousingSolutions
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public System.DateTime DateOfBirth { get; set; }
+        public string password { get; set; }
         public string PhoneNumber { get; set; }
         public string EmailId { get; set; }
         public string Adress { get; set; }
